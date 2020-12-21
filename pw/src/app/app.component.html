@@ -7,15 +7,15 @@
 
 <div>
   <label>Use Letters</label>
-  <input type="checkbox">
+  <input (change)="letterChange()" type="checkbox">
 </div>
 <div>
   <label>Use Numbers</label>
-  <input type="checkbox">
+  <input (change)="numberChange()" type="checkbox">
 </div>
 <div>
   <label>Use Symbols</label>
-  <input type="checkbox">
+  <input (change)="symbolChange()" type="checkbox">
 </div>
 <div>
 <button (click)="onButtonClick()">Generate!</button>
@@ -24,3 +24,9 @@
   <label>Your Password</label>
   <input [value]="password">
 </div>
+
+
+
+
+
+
