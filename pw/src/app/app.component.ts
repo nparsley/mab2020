@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   length = 0;
-  password = '';
+  password: boolean = false;
   includeLetters = false;
   includeNumbers = false;
   includeSymbols = false;
