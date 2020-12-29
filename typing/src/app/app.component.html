@@ -6,13 +6,18 @@
   <h1 class="title has-text-centered">Typing Challenge</h1>
 
   <p class="has-text-centered">
-    Randomly generated text should go here
+    <!-- Randomly generated text should go here -->
+    {{ randomText }}
+
   </p>
 
   <div class="field">
-    <input class="input">
+    <input
+      class="input"
+      (input)="onInput($event.target.value)">
   </div>
-  <div class="box has-text-centered">
+
+  <div *ngIf="randomText === enteredText" class="box has-text-centered">
     <h1 class="title">Success</h1>
   </div>
 
