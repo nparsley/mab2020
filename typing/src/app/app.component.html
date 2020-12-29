@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="column is-centered">
+  <div class="columns is-centered">
     <div class="box column is-one-third">
 
 
@@ -7,8 +7,10 @@
 
   <p class="has-text-centered">
     <!-- Randomly generated text should go here -->
-    {{ randomText }}
-
+    <span
+    [class]="compare(letter, enteredText[i])"
+    *ngFor="let letter of randomText.split(''); let i = index;"
+    >{{ letter }}</span>
   </p>
 
   <div class="field">
@@ -25,3 +27,6 @@
 </div>
 </div>
 </div>
+
+
+
