@@ -1,12 +1,23 @@
-import { Directive } from '@angular/core';
+import { typeWithParameters } from '@angular/compiler/src/render3/util';
+import { Directive, ElementRef, Input } from '@angular/core';
 
 @Directive({
   selector: '[appClass]'
 })
 export class ClassDirective {
 
-  constructor() {
-    console.log('Class Directive was used');
+
+  constructor(private element: ElementRef) {
+
    }
 
+  @Input('appClass') set classNames(classObj: any) {
+    for (let key in classObj) {
+      if (classObj[key]) {
+        this.element.nativeElement.classList.add(key);
+      } else {
+        this.element.nativeElement.classList.remove(key);
+      }
+    }
+  }
 }
