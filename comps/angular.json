@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "comps"
+  "defaultProject": "comps",
+  "cli": {
+    "analytics": false
+  }
 }
