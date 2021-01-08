@@ -1,18 +1,37 @@
-interface PostGateKeeper {
-    title: string;
-    daysOld: number;
-    published: boolean;
+class Car {
+    // color: string;
+    // private year: number; /* adding public and private in constructor below replaces this part */
+
+    constructor(public color: string, private year: number) {
+        // this.color = color; /* adding public and private in constructor above replaces this part */
+        // this.year = year;
+    }
+
+    drive() {
+        this.putInGear();
+        this.pressPedal();
+        this.turnWheel();
+    }
+
+    private putInGear() {
+        
+    }
+
+    private pressPedal() {
+
+    }
+
+    private turnWheel() {
+
+    }
+
 }
 
+const myCar = new Car('red', 2000);
+// myCar.drive();
 
-const post = {
-    title: 'latest typescript news',
-    daysOld: 10,
-    published: true
-};
+// myCar.putInGear();
 
-const printPost = (postToPrint: PostGateKeeper) => {
-    return `${postToPrint.title} (${postToPrint.daysOld} days old)`;
-};
+// console.log(myCar.color, myCar.year);
 
-printPost(post);
+console.log(myCar.color);
