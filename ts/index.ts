@@ -20,17 +20,17 @@
 // startDriving(myCar);
 
 
-class NumberHolder {
-    value: number;
-}
+// class NumberHolder {
+//     value: number;
+// }
 
-class StringHolder {
-    value: string;
-}
+// class StringHolder {
+//     value: string;
+// }
 
-class BooleanHolder {
-    value: boolean;
-}
+// class BooleanHolder {
+//     value: boolean;
+// }
 
 // const numberHolder = new NumberHolder();
 // numberHolder.value = 10;
@@ -39,13 +39,30 @@ class BooleanHolder {
 // stringHolder.value = 'A string';
 
 
-class ValueHolder<TypeForValueProperty> {
-    value: TypeForValueProperty;
+class ValueHolder<T> {
+    value: T;
 }
 
-const numberHolder = new ValueHolder<number>();
-numberHolder.value;
+const numberWrapper = (value: number): number[] => {
+    return [value];
+};
 
-new ValueHolder<string>();
-new ValueHolder<boolean>();
 
+const stringWrapper = (value: string): string[] => {
+    return [value];
+};
+
+const booleanWrapper = (value: boolean): boolean[] => {
+    return [value];
+};
+
+const valueWrapper = <T>(value: T): T[] => {
+    return [value];
+};
+
+// valueWrapper<number>(10);
+// valueWrapper<boolean>(true);
+// valueWrapper<string>('hello');
+
+const value = valueWrapper(10);
+const sameValue = valueWrapper<number>(10);
