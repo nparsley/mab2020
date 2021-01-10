@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'wsearch';
+  onTerm(term: string) {
+    console.log('i am the app and her is the term,', term);
+  }
 }
