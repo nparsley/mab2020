@@ -43,6 +43,8 @@ class ValueHolder<T> {
     value: T;
 }
 
+new ValueHolder<number>();
+
 const numberWrapper = (value: number): number[] => {
     return [value];
 };
