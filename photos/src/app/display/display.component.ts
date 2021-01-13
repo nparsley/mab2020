@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FetchService } from '../fetch.service';
 
 @Component({
   selector: 'app-display',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnInit {
+  image: any;
 
-  constructor() { }
+  constructor(private fetch: FetchService) {
+
+  }
 
   ngOnInit(): void {
+  }
+
+
+  onDisplay(image: string) {
+    this.fetch.getFetch(image).subscribe((image) => {
+      this.image = image;
+      console.log(image.urls.regular);
+    })
   }
 
 }
