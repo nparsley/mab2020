@@ -7,7 +7,7 @@ import { FetchService } from '../fetch.service';
   styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnInit {
-  image: any;
+  image: string;
 
   constructor(private fetch: FetchService) {
 
@@ -19,8 +19,7 @@ export class DisplayComponent implements OnInit {
 
   onDisplay(image: string) {
     this.fetch.getFetch(image).subscribe((image) => {
-      this.image = image;
-      console.log(image.urls.regular);
+      this.image = image.urls.regular;
     })
   }
 

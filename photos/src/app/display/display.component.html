@@ -1,2 +1,4 @@
-<p>display works!</p>
-<button (click)="onDisplay()"></button>
+<div>
+  <button (click)="onDisplay()">Random Photo</button>
+</div>
+<img *ngIf="image" [src]="image">

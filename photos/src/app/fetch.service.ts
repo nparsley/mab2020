@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { pluck } from 'rxjs/operators';
+
 
 
 interface FetchResponse {
@@ -19,7 +19,7 @@ export class FetchService {
   }
 
 
-  getFetch(image: any) {
+  getFetch(image: string) {
     return this.http.get<FetchResponse>('https://api.unsplash.com/photos/random', {
       headers: {
         Authorization: 'Client-ID skkVkyJKi7rObcOcR6ZiqyReYTWs-7RAzudInr0fbtA'
