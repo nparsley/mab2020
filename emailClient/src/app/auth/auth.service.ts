@@ -6,13 +6,13 @@ interface UsernameAvailableResponse {
 }
 
 interface SignupCredentials {
-  username: string,
-  password: string,
-  passwordConfirmation: string
+  username: string;
+  password: string;
+  passwordConfirmation: string;
 }
 
 interface SignupResponse {
-  username: string
+  username: string;
 }
 
 @Injectable({
@@ -30,8 +30,7 @@ export class AuthService {
   }
 
   signup(credentials: SignupCredentials) {
-    return this.http.post<SignupResponse>(
-      this.rootUrl + '/auth/signup',
+    return this.http.post<SignupResponse>(`${this.rootUrl}/auth/signup`,
       credentials
       );
   }

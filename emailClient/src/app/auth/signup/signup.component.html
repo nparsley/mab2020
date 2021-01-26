@@ -5,8 +5,6 @@
   <app-input inputType="password" label="Password" [control]="authForm.get('password')"></app-input>
   <app-input inputType="password" label="Password Confirmation" [control]="authForm.get('passwordConfirmation')"></app-input>
 
-
-
   <div
     *ngIf="
       authForm.get('password').touched &&
@@ -18,15 +16,16 @@
     <p *ngIf="authForm.errors.passwordsDontMatch">
       Password and Password Confirmation must match
     </p>
+    <p *ngIf="authForm.errors.noConnection">
+      No internet connection detected, failed to sing up
+    </p>
+    <p *ngIf="authForm.errors.unkownError">
+      Failed to sing up
+    </p>
   </div>
-
   <div>
     <button class="ui submit button primary">
       Submit
     </button>
   </div>
-
-
-
-  {{ authForm.errors | json }}
 </form>
