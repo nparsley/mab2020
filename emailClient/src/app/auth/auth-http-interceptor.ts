@@ -13,20 +13,7 @@ export class AuthHttpInterceptor implements HttpInterceptor {
 
     });
 
-    return next.handle(modifiedReq)
-    .pipe(
-      filter(val => val.type === HttpEventType.Sent),
+    return next.handle(modifiedReq);
 
-      tap(val => {
-        console.log('sent the request');
-        // if(val.type === HttpEventType.Sent) {
-        //   console.log('request was sent to server');
-        // }
-
-        // if(val.type === HttpEventType.Response) {
-        //   console.log('got a response from the API', val);
-        // }
-      })
-    )
   }
 }
