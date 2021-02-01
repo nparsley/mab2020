@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-email-show',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmailShowComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe((value) => {
+      console.log(value);
+    })
+
+    console.log(this.route);
+
+    // setInterval(() => {
+    //   console.log(this.route.snapshot.params.id);
+    // }, 1000);
+
+
   }
 
 }
