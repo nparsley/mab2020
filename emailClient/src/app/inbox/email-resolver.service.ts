@@ -11,7 +11,14 @@ export class EmailResolverService implements Resolve<Email> {
   constructor() { }
 
   resolve() {
-    
+    return {
+      id: 'asdasdsa',
+      subject: 'asdasdsa',
+      to: 'asdasdsa',
+      from: 'asdasdsa',
+      text: 'asdasdsa',
+      html: 'asdasdsa'
+    }
   }
 
 }
