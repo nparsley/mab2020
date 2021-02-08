@@ -26,3 +26,29 @@ const throwError = (message: string): void => {
     }
     // return message;
 };
+
+const todaysWeather = {
+    date: new Date();
+    weather: 'sunny'
+};
+
+const logWeather = ({ date, weather }: { date: Date, weather: string }): void => {
+    console.log(date);
+    console.log(weather);
+};
+
+// es2015
+const logWeatheres = ({ date, weather }) => {
+    console.log(date);
+    console.log(weather);
+};
+
+
+logWeather(todaysWeather);
+
+
+
+
+
+
+
