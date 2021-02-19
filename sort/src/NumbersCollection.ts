@@ -1,7 +1,15 @@
-export class NumbersCollection {
+import { Sorter } from './Sorter';
+
+export class NumbersCollection extends Sorter {
     
 
-    constructor(public data: number[]) {}
+    constructor(public data: number[]) {
+        super();
+    }
+
+/*     sort() {
+
+    } */
 
     get length(): number {
         return this.data.length;
@@ -18,6 +26,3 @@ export class NumbersCollection {
     }
 }
 
-/* const collection = new NumbersCollection([1,2,3]);
-collection.length;
-// collection.length(); */
