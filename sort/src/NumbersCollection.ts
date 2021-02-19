@@ -19,7 +19,7 @@ export class NumbersCollection extends Sorter {
         return this.data[leftIndex] > this.data[rightIndex];
     }
 
-    swap(leftIndex: number, rightIndex: number): void {
+    swap(leftIndex: number, rightIndex: number): any {
         const leftHand = this.data[leftIndex];
         this.data[leftIndex] = this.data[rightIndex];
         this.data[rightIndex] = leftHand;
