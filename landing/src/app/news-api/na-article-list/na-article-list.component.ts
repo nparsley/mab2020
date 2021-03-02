@@ -20,4 +20,8 @@ export class NaArticleListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getPage(page: number) {
+    this.newsApiService.getPage(page);
+  }
+
 }
